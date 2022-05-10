@@ -1,0 +1,27 @@
+.d-grid.d-md-flex.btns {
+  margin-top: 7px;
+}
+button,
+a {
+  width: 90px;
+  min-width: 90px;
+}
+button.btn.btn-sm {
+  line-height: 2;
+  margin: 3px;
+  background: #c00;
+  color: #fff;
+}
+button.btn.btn-sm:hover {
+  background: #990000;
+  transition: 1s;
+}
+a.btn.btn-sm {
+  background: #222222;
+  color: #fff;
+  line-height: 2;
+  margin: 3px;
+}
+a.btn.btn-sm:hover {
+  background: #131313;
+}

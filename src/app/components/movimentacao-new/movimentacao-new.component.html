@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-6">Movimentação</h1>
+    <p class="lead-1">Inclusão de uma nova movimentação</p>
+    <hr class="my-2" />
+    <form [formGroup]="formMovimento" (ngSubmit)="onSubmit()">
+      <div class="col-md-3">
+        <label for="iData" class="form-label">Data</label>
+        <input
+          type="date"
+          class="form-control"
+          id="iData"
+          [(ngModel)]="dataHora"
+          formControlName="dataHora"
+        />
+      </div>
+      <div class="col-md-9">
+        <label for="iCorrentista" class="form-label">Correntista</label>
+        <select
+          id="iCorrentista"
+          [(ngModel)]="correntista"
+          formControlName="correntista"
+          class="form-select"
+        >
+          <option selected disabled>Correntistas</option>
+          <option *ngFor="let c of correntistas" [ngValue]="c">
+            {{ c.cpf }}-{{ c.nome }}
+          </option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="iDescricao" class="form-label">Descrição</label>
+        <input
+          type="text"
+          class="form-control"
+          id="iDescricao"
+          placeholder="Informe uma descrição"
+          [(ngModel)]="descricao"
+          formControlName="descricao"
+        />
+      </div>
+      <div class="col-md-3">
+        <label for="iTipo" class="form-label">Tipo Movimentação</label>
+        <select
+          id="iTipo"
+          class="form-select"
+          [(ngModel)]="tipo"
+          formControlName="tipo"
+        >
+          <option selected>RECEITA</option>
+          <option>DESPESA</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="iValor" class="form-label">R$ Valor</label>
+        <input
+          type="text"
+          class="form-control"
+          id="iValor"
+          [(ngModel)]="valor"
+          formControlName="valor"
+          currencyMask
+          [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+        />
+      </div>
+      <div class="d-grid d-md-flex btns">
+        <button
+          class="btn btn-sm"
+          type="submit"
+          [disabled]="!formMovimento.valid"
+        >
+          Gravar
+        </button>
+        <a routerLink="/movimentacoes" class="btn btn-sm">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>

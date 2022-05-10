@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-6">Correntistas</h1>
+    <p class="lead-1">Cadastro de correntista</p>
+    <hr class="my-2" />
+  </div>
+  <form [formGroup]="formCliente" (ngSubmit)="onSubmit()">
+    <div class="row g-2">
+      <div class="col-md-3">
+        <input
+          class="form-control"
+          id="iCpf"
+          [(ngModel)]="cpf"
+          formControlName="cpf"
+          placeholder="CPF"
+        />
+      </div>
+      <div class="col-5">
+        <input
+          type="text"
+          class="form-control"
+          id="iNome"
+          [(ngModel)]="nome"
+          formControlName="nome"
+          placeholder="Nome do Correntista"
+        />
+      </div>
+      <div class="col-3">
+        <div class="d-grid d-md-flex">
+          <button
+            class="btn btn-sm"
+            type="submit"
+            [disabled]="!formCliente.valid"
+          >
+            Gravar
+          </button>
+          <a routerLink="/movimentacoes" class="btn btn-sm">Voltar</a>
+        </div>
+      </div>
+    </div>
+  </form>
+  <p></p>
+  <div class="all-card">
+    <div *ngFor="let item of correntistas; index as i" class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ item.nome }}</h5>
+        <p class="card-text">Conta N° {{ item.conta.numero }}</p>
+        <p class="card-text">Saldo {{ item.conta.saldo | currency: "BRL" }}</p>
+      </div>
+    </div>
+  </div>
+</div>

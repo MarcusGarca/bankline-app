@@ -1,0 +1,23 @@
+a.btn.btn-sm {
+  line-height: 2;
+  margin: 3px;
+  background: #c00;
+  color: #fff;
+}
+a.btn.btn-sm:hover {
+  background: #990000;
+  transition: 1s;
+}
+.buscar {
+  background: #222222;
+  color: #fff;
+  line-height: 2;
+  margin: 3px;
+}
+.buscar:hover {
+  background: #131313;
+}
+
+select {
+  margin: 3px;
+}

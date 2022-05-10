@@ -1,0 +1,28 @@
+div.card {
+  border-left: 2px solid #c00;
+  margin: 5px;
+}
+.row {
+  align-items: center;
+}
+.card-body {
+  box-shadow: 0 0 16px rgb(34 34 34 / 24%);
+}
+.btn {
+  line-height: 2;
+  margin: 3px;
+  background: #c00;
+  color: #fff;
+  width: 80px;
+  min-width: 80px;
+}
+.btn:hover {
+  background: #990000;
+  transition: 1s;
+}
+a.btn.btn-sm {
+  background: #222222;
+}
+a.btn.btn-sm:hover {
+  background: #131313;
+}
